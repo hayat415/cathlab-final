@@ -1,0 +1,691 @@
+{% extends 'base.html'%}
+
+{%block content%}
+
+ 
+{%for sudo in sudo%}
+
+<table>
+<tr height=120>
+    <td>
+    </td>
+</tr>
+<tr>
+    <td>
+    </td>
+</tr>
+</table>
+       
+    <table class="info", style="width:100%">
+    
+           
+          <tr>
+            <td >Cath ID  </td> <td> : </td> <td> {{sudo.p_id}} </td>
+            <td style="width:20%"> </td>
+            <td >Procedure</td> <td>:</td> <td> Angiography </td>
+          </tr>
+          
+          <tr>
+            <td >Name </td><td>:</td><td> {{sudo.name}} </td>
+            <td > </td>
+            <td >Operator </td><td>:</td><td> {{sudo.operator.name}} </td>
+          </tr>  
+
+          <tr>
+            <td >Patient Age</td> <td> :</td> <td> {{sudo.age}} </td>
+            <td > </td>
+            <td > Procedure Date </td> <td> : </td> <td> {{sudo.Date}} </td>
+          </tr>  
+          <tr>
+            <td >Patient Sex </td> <td>:</td> <td> {{sudo.sex}} </td>
+            <td > </td>
+            <td >Procedure Status</td> <td> : </td> <td> On Sehat Sahulat Card </td>
+          </tr>  
+
+          <tr>
+            <td >Patient Address</td> <td>  : </td><td> {{sudo.address}} </td>
+            <td > </td>
+            <td >Technician</td><td> : </td> <td> Mr. Shabir Ahmed</td>
+          </tr>  
+      </table>
+
+    <center> <h3> CORONARY ANGIOGRAPHY</h3> </center>
+    <h3 class="process">PROCESS</h3>
+    <h5 class="text"> {{sudo.angio.text | safe}} </h5>
+   
+
+    <table class="angio" width=50%> 
+      <tr >
+        <td colspan=2> <b><center> ANALYSIS</center></b></td>
+      </tr>
+
+        
+        <tr >
+            <td width=14%>LMS</td> 
+            <td>
+                {{sudo.angio.lms | safe }}
+            </td>
+        </tr>
+        <tr>
+            <td> LAD </td>
+            <td>
+               {{sudo.angio.lad | safe }}
+            </td>
+        </tr>
+        <tr>
+            <td>RAMUS</td>
+            <td>
+           {{sudo.angio.ramus | safe }}
+            </td>
+        </tr>
+        <tr>
+            <td> LCX </td>
+            <td>
+       {{sudo.angio.lcx | safe }}
+            </td>
+        </tr>
+        <tr>
+            <td>RCA </td>
+            <td>
+       {{sudo.angio.rca | safe }}
+            </td>
+        </tr>
+    </table>
+    <table >
+        <tr>
+            <td><h3>RESULT <h3> </td><td> </td>
+        </tr>
+        <tr>
+        
+        <tr>
+           <td></td> <td>{{sudo.angio.result_angio | safe }}</td>
+        </tr>
+        <tr>
+            <td> <h3>RECOMMENDATIONS</h3></td>  <td> </td>
+        </tr>
+        <tr>
+            <td></td> <td>{{sudo.angio.recommendation_angio | safe }}</td>
+        </tr>
+        <tr>
+           <td> </td> <td > </td> 
+        </tr>
+        </table>
+       <p style="text-align:right;"> {{sudo.operator.name}}</br>
+        {{sudo.operator.designation}}
+       </p>
+
+       INDICATIONS FOR ANGIOGRAPHY: {{sudo.indication}}
+
+       <p class="break" style="page-break-after: always;"></p>
+  
+    <!--Now Angioplasty-->
+       <table>
+        <tr height=120>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        </table>
+               
+            <table style="width:100%", class="info">
+            
+                   
+                  <tr>
+                    <td >Cath ID  </td> <td> : </td> <td> {{sudo.p_id}} </td>
+                    <td style="width:20%"> </td>
+                    <td >Procedure</td> <td>:</td> <td> Angioplasty </td>
+                  </tr>
+                  
+                  <tr>
+                    <td >Name </td><td>:</td><td> {{sudo.name}} </td>
+                    <td > </td>
+                    <td >Operator </td><td>:</td><td> {{sudo.operator.name}} </td>
+                  </tr>  
+        
+                  <tr>
+                    <td >Patient Age</td> <td> :</td> <td> {{sudo.age}} </td>
+                    <td > </td>
+                    <td > Procedure Date </td> <td> : </td> <td> {{sudo.Date}} </td>
+                  </tr>  
+                  <tr>
+                    <td >Patient Sex </td> <td>:</td> <td> {{sudo.sex}} </td>
+                    <td > </td>
+                    <td >Procedure Status</td> <td> : </td> <td> On Sehat Sahulat Card </td>
+                  </tr>  
+        
+                  <tr>
+                    <td >Patient Address</td> <td>  : </td><td> {{sudo.address}} </td>
+                    <td > </td>
+                    <td >Technician</td><td> : </td> <td> Mr. Shabir Ahmed</td>
+                  </tr>  
+              </table>
+        
+            <center> <h3 class="info"> CORONARY ANGIOPLASTY</h3> </center>
+            <h5 class="pci">{{sudo.pci.pci_desc | safe}}</h5>
+             RESULT: </br>
+             &nbsp &nbsp  &nbsp &nbsp {{sudo.pci.result_pci}}</br></br>
+           RECOMMENDATIONS: </br>
+           &nbsp &nbsp  &nbsp &nbsp {{sudo.pci.recommendation}}</br>
+           <p style="text-align:right;"> {{sudo.operator.name}}</br>
+            {{sudo.operator.designation}}
+           </p>
+
+           <p class="break" style="page-break-after: always;"></p>
+  
+           <!--Now Discharge angio-->
+
+<table>
+        <tr height=120>
+            <td ><img src="/static/admin/img/header.jpg" alt="Error" width=100% >
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        </table>
+               
+            <table style="width:100%", class="info">
+            
+                   
+                  <tr>
+                    <td >Cath ID  </td> <td> : </td> <td> {{sudo.p_id}} </td>
+                    <td style="width:20%"> </td>
+                    <td >Procedure</td> <td>:</td> <td> Angiography </td>
+                  </tr>
+                  
+                  <tr>
+                    <td >Name </td><td>:</td><td> {{sudo.name}} </td>
+                    <td > </td>
+                    <td >Operator </td><td>:</td><td> {{sudo.operator.name}} </td>
+                  </tr>  
+        
+                  <tr>
+                    <td >Patient Age</td> <td> :</td> <td> {{sudo.age}} </td>
+                    <td > </td>
+                    <td > Procedure Date </td> <td> : </td> <td> {{sudo.Date}} </td>
+                  </tr>  
+                  <tr>
+                    <td >Patient Sex </td> <td>:</td> <td> {{sudo.sex}} </td>
+                    <td > </td>
+                    <td >Procedure Status</td> <td> : </td> <td> On Sehat Sahulat Card </td>
+                  </tr>  
+        
+                  <tr>
+                    <td >Patient Address</td> <td>  : </td><td> {{sudo.address}} </td>
+                    <td > </td>
+                    <td >Technician</td><td> : </td> <td> Mr. Shabir Ahmed</td>
+                  </tr>  
+              </table>
+        
+            <center> <h3> Discharge slip </h3> </center> </br>
+
+
+            
+            <table width=70% align=center class="disch" >
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td><center> Continue old treatment</center></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+            </table>
+    
+            <p class="break" style="page-break-after: always;"></p>
+  
+            <!--Now Discharge PCI-->
+    
+            <table>
+                <tr height=120>
+                    <td><img src="/static/admin/img/header.jpg" alt="Error" width=100% >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+                </table>
+                       
+                    <table class="info" style="width:100%">
+                    
+                           
+                          <tr>
+                            <td >Cath ID  </td> <td> : </td> <td> {{sudo.p_id}} </td>
+                            <td style="width:20%"> </td>
+                            <td >Procedure</td> <td>:</td> <td> Angioplasty </td>
+                          </tr>
+                          
+                          <tr>
+                            <td >Name </td><td>:</td><td> {{sudo.name}} </td>
+                            <td > </td>
+                            <td >Operator </td><td>:</td><td> {{sudo.operator.name}} </td>
+                          </tr>  
+                
+                          <tr>
+                            <td >Patient Age</td> <td> :</td> <td> {{sudo.age}} </td>
+                            <td > </td>
+                            <td > Procedure Date </td> <td> : </td> <td> {{sudo.Date}} </td>
+                          </tr>  
+                          <tr>
+                            <td >Patient Sex </td> <td>:</td> <td> {{sudo.sex}} </td>
+                            <td > </td>
+                            <td >Procedure Status</td> <td> : </td> <td> On Sehat Sahulat Card </td>
+                          </tr>  
+                
+                          <tr>
+                            <td >Patient Address</td> <td>  : </td><td> {{sudo.address}} </td>
+                            <td > </td>
+                            <td >Technician</td><td> : </td> <td> Mr. Shabir Ahmed</td>
+                          </tr>  
+                      </table>
+                
+                    <center> <h3> Discharge slip </h3> </center> </br>
+
+                    <table width=70% align=center class="disch" >
+                      <tr>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><center> Tab. Loprin 75mg</center></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><center>Tab. Plavix 75mg</center></td>
+                      </tr>
+                    </table>    
+                  </table></br></br></br></br></br> </br></br></br></br></br></br></br></br></br></br></br></br> </br></br></br></br></br></br></br></br></br></br></br></br> </br></br></br></br></br></br></br>
+                  <table>
+                    <tr>
+                      <td><img src="/static/admin/img/footer.jpg" alt="Error" width=100% ></td>
+                    </tr>
+                  </table>
+        
+                    
+                    
+            
+                    <p class="break" style="page-break-after: always;"></p>
+          
+                    <!--Hospital invoice-->
+                    <table>
+                        <tr height=120>
+                            <td><img src="/static/admin/img/header.jpg" alt="Error" width=100% >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                        </tr>
+                        </table>
+                               
+                            <table style="width:100%", class="info">
+                            
+                                   
+                                  <tr>
+                                    <td >Cath ID  </td> <td> : </td> <td> {{sudo.p_id}} </td>
+                                    <td style="width:20%"> </td>
+                                    <td >Procedure</td> <td>:</td> <td> Angioplasty </td>
+                                  </tr>
+                                  
+                                  <tr>
+                                    <td >Name </td><td>:</td><td> {{sudo.name}} </td>
+                                    <td > </td>
+                                    <td >Operator </td><td>:</td><td> {{sudo.operator.name}} </td>
+                                  </tr>  
+                        
+                                  <tr>
+                                    <td >Patient Age</td> <td> :</td> <td> {{sudo.age}} </td>
+                                    <td > </td>
+                                    <td > Procedure Date </td> <td> : </td> <td> {{sudo.Date}} </td>
+                                  </tr>  
+                                  <tr>
+                                    <td >Patient Sex </td> <td>:</td> <td> {{sudo.sex}} </td>
+                                    <td > </td>
+                                    <td >Procedure Status</td> <td> : </td> <td> On Sehat Sahulat Card </td>
+                                  </tr>  
+                        
+                                  <tr>
+                                    <td >Patient Address</td> <td>  : </td><td> {{sudo.address}} </td>
+                                    <td > </td>
+                                    <td >Technician</td><td> : </td> <td> Mr. Shabir Ahmed</td>
+                                  </tr>  
+                              </table>
+                        
+                            <center> <h3> Hopital Invoice </h3> </center> </br>
+                            <table class="content-table" width=100%> 
+                                <tr>
+                                    <td>
+                                        Patient Name
+                                    </td>
+                                    <td>
+                                        {{sudo.name}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Visit Number
+                                    </td>
+                                    <td>
+                                        {{sudo.visit_number}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CNIC Number
+                                    </td>
+                                    <td>
+                                        {{sudo.cnic}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Procedure
+                                    </td>
+                                    <td>
+                                        {{sudo.procedure.procedure_type}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Total Cost
+                                    </td>
+                                    <td>
+                                        {{sudo.procedure.cost}}
+                                    </td>
+                                </tr>
+                                
+                            </table></br></br></br></br></br> </br></br></br></br></br></br></br>
+                            <table>
+                              <tr>
+                                <td><img src="/static/admin/img/footer.jpg" alt="Error" width=100% ></td>
+                              </tr>
+                            </table>
+
+
+                            <p class="break" style="page-break-after: always;"></p>
+          
+                            <!--Pre-requisite form-->
+                            <table >
+                                <tr >
+                                    <td><img src="/static/admin/img/state.jpg" alt="Error" height=30 >
+                            
+                                    </td>
+                                </tr>
+                               
+                                </table>
+                                     
+                                    <center> <h3> PRE-REQUISITE FOR CLAIM SUBMISSION </h3> </center> </br>
+                                    <table class="pre-req" align=center> 
+                                        
+                                        <tr>
+                                            <td>
+                                                Visit Number:
+                                            </td>
+                                            <td >
+                                                {{sudo.visit_number}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               Patient Name:
+                                            </td>
+                                            <td>
+                                                {{sudo.name}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Admission Date:
+                                            </td>
+                                            <td>
+                                                {{sudo.Date}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                
+                                              Discharge Date
+                                            </td>
+                                            <td>
+                                                {{sudo.discharge_date}}
+                                            </td>
+                                        </tr>
+                                        
+                                    </table></br> </br>
+                                    <table border=2 width=80% align=center class="pre-requisite"> 
+                                      <tr>
+                                        <td>
+                                      Pre-Requisite Form?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Claim Statement?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Hospital Invoice
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Patient Complete Identification?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      State Life Referral Letter?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      SLIC Life Referral Letter?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      SLIC Discharge Slip?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Hospital Treatment Charts?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Hospital Discharge Slip?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Doctor Slip?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Investigations?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr> 
+                                      <tr>
+                                        <td>
+                                      Consent
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                          &#10003;
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                      </tr>  
+                                      <tr>
+                                        <td>
+                                      Payment Receipt?
+                                        </td>
+                                        <td>
+                                      Yes
+                                        </td>
+                                        <td>
+                                     
+                                        </td>
+                                        <td>
+                                    No
+                                        </td>
+                                        <td>
+                                         &#10003;
+                                        </td>
+                                      </tr> 
+                                    </table></br></br>
+                                    HFO</br>
+                                    Sign and Stamp:
+{%endfor%}
+{% endblock %}

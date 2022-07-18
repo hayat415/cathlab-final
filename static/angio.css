@@ -1,0 +1,100 @@
+ .table{
+    color: rgb(24, 20, 21);
+    border-collapse: collapse;
+    background-color: rgb(156, 6, 6);
+ }
+
+ .process{color:rgb(53, 48, 48);
+    border-bottom: 1px dashed grey;
+
+ }
+ .angio{
+    color:rgb(0, 0, 0);
+    border-collapse: collapse;
+
+    
+    border-radius:1px;
+    border-top: 1px dashed grey;
+    border-bottom: 1px dashed grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+  
+ }
+ .angio tr{
+  border-bottom: 1px dashed rgb(152, 132, 132);
+ }
+
+ .content-table{border-collapse: collapse;
+   
+   place-items: center;
+   font-size: 15px;
+   width: 40em;
+  
+   font-family: Arial, Helvetica, sans-serif;
+   margin-left: auto;
+   margin-right: auto;
+   border-width:1em,2px solid dimgray;
+   border-width: 1em;
+   
+   
+   
+ }
+ .content-table tr{
+   border-top: 1px solid #dddddd; 
+   padding:20px;
+
+ }
+ .content-table td{
+   padding: 30px;
+   place-items: center;
+   border: 2px solid dimgray;
+   text-align: center;
+   
+ }
+ .info{
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid dimgray;
+  font-size: 12px;
+  
+ }
+ .pci{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+ }
+ .text{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+ }
+.pre-requisite tbody tr td{
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.pre-req tr :nth-child(odd) {
+  background-color: #eeeeee;
+}
+.pre-req tr :nth-child(even) {
+  background-color: #d1c9d0;
+  padding: 10px;
+  border-width: 4cm;
+}
+
+.pre-req{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border-top: 1px dashed grey;
+  border-bottom: 1px dashed grey;
+  width: 40em;
+  
+}
+.disch{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  border-radius:3px;
+  border-top: 1px dashed grey;
+  border-bottom: 1px dashed grey;
+ 
+  
+  
+}
