@@ -1,3 +1,4 @@
+from random import choices
 from unittest.util import _MAX_LENGTH
 from django.db import models
 import datetime
@@ -25,7 +26,21 @@ class PCI(models.Model):
    
 
 class Angio(models.Model):
-
+    TECHNICIAN_CHOICE=(
+        ('Shabir Ahmed', 'Shabir Ahmed'),
+        ('Ibrar Ahmed', 'Ibrar Ahmed'),        
+    )
+    #Heamodinamic 
+    blood_pressure=models.IntegerField()
+    respiratory_rate=models.IntegerField()
+    saturation=models.IntegerField()
+    heart_rate=models.IntegerField()
+    #radiation
+    flouro_time=models.IntegerField()
+    contrast_received=models.FloatField()
+    radiation_dose=models.FloatField()
+    #Angio
+    technician=models.CharField(max_length=200, choices=TECHNICIAN_CHOICE)
     text=HTMLField(default=" Right Radial Artery entered with Seldinger technique using  6F sheath. Diagnostic Catheter TIG II 5F used for LCA & JR-4 5F used for RCA. Standard views recorded. Pressure homeostasis achieved.")
     lms=models.TextField(default="Normal")
     lad=models.TextField(default="Proximal: Normal </br> Mid: Normal </br> Distal:Normal")
