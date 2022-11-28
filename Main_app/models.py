@@ -39,6 +39,7 @@ class Angio(models.Model):
     flouro_time=models.IntegerField()
     contrast_received=models.FloatField()
     radiation_dose=models.FloatField()
+    sceinee_time=models.IntegerField()
     #Angio
     technician=models.CharField(max_length=200, choices=TECHNICIAN_CHOICE)
     text=HTMLField(default=" Right Radial Artery entered with Seldinger technique using  6F sheath. Diagnostic Catheter TIG II 5F used for LCA & JR-4 5F used for RCA. Standard views recorded. Pressure homeostasis achieved.")

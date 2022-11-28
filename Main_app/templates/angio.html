@@ -8,10 +8,27 @@
 <br/>
 
     {%for sudo in venue_list%}
-        <a href="{% url 'show-angio' sudo.p_id %}"> {{ sudo }}</a>
+    <table border="2">
+        <tr>
+            <td><a href="{% url 'show-angio' sudo.p_id %}"> {{ sudo.p_id }}</a></td>
+            <td>{{sudo.name}}    </td>
+            <td>{{sudo.vistit_number}}</td>
+            <td>{{sudo.procedure.procedure_type}}</td>
+            <td>{{sudo.operator.name}}</td>
+            <td>{{sudo.Date}}</td>
+            <td>{{sudo.procedure.Cost}}</td>
+            
+            
+
+        </tr>
+    </table>
+        
     
+
+
+
+
 <br/>
-{{sudo.age}}
 
     {% endfor%}
     </center>

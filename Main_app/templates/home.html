@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{%block content%}
+
+
+    <center>
+    <h1> Angiography</h1>
+
+
+{%for sudo in venue_list%}
+<a href="{% url 'show-angio' sudo.p_id %}"> {{ sudo.p_id }}</a>
+
+
+{% endfor%}
+    </center>
+
+  
+{% endblock %}

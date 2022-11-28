@@ -47,10 +47,32 @@
             <td > </td>
             <td >Technician</td><td> : </td> <td> Mr. Shabir Ahmed</td>
           </tr>  
+          <tr> <td colspan="3">INDICATIONS FOR ANGIOGRAPHY: {{sudo.indication}}</td></tr>
+      </table>
+      <table class="info", style="width:100%">
+        <tr>
+          <center>Hemodynamics </center>
+        </tr>
+        <tr>
+          <td>Heart Rate:{{sudo.angio.heart_rate}}</td>
+          <td>Blood Pressure:{{sudo.angio.blood_pressure}}</td>
+          <td>Respiratory Rate:{{sudo.angio.respiratory_rate}}</td>
+          <td>Saturation:{{sudo.angio.saturation}}</td>
+      
+        </tr>
+        </table>
+        <table class="info", style="width:100%">
+        <tr>  <center>Radiation / contrast / Fluoro Time</center></tr>
+        <tr>
+          <td> Flouro_time{{sudo.angio.flouro_time}}</td>
+          <td> Contrast Received:{{sudo.angio.contrast_received}}
+          <td> Scinee Time:{{sudo.angio.sceinee_time}}</td>
+          <td>Radiation Dose: {{sudo.angio.radiation_dose}}</td>
+        </tr>
       </table>
 
-    <center> <h3> CORONARY ANGIOGRAPHY</h3> </center>
-    <h3 class="process">PROCESS</h3>
+    <center> <h4> CORONARY ANGIOGRAPHY</h4> </center>
+    <h4 class="process">PROCESS</h4>
     <h5 class="text"> {{sudo.angio.text | safe}} </h5>
    
 
@@ -114,7 +136,7 @@
         {{sudo.operator.designation}}
        </p>
 
-       INDICATIONS FOR ANGIOGRAPHY: {{sudo.indication}}
+      
 
        <p class="break" style="page-break-after: always;"></p>
   
@@ -400,7 +422,7 @@
                                         Total Cost
                                     </td>
                                     <td>
-                                        {{sudo.procedure.cost}}
+                                        {{sudo.procedure.Cost}}
                                     </td>
                                 </tr>
                                 

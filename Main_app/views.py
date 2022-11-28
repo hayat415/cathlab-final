@@ -11,6 +11,9 @@ def list_venues(request):
     venue_list=Patient.objects.all()
     return render(request, 'angio.html',
         {'venue_list': venue_list})
+
+def home(request):
+    return render(request, 'home.html')
          
 
     
