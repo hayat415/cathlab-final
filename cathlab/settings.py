@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     
-    'adminlte3',
-    'adminlte3_theme',
+    #'adminlte3',
+    #'adminlte3_theme',
+
+    'daterange_filter',
     'tinymce',
     'Main_app',
     'django.contrib.admin',
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'cathlab.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,"templates"],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

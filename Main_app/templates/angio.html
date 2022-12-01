@@ -7,20 +7,36 @@
     <h1> Angiography</h1>
 <br/>
 
-    {%for sudo in venue_list%}
-    <table border="2">
-        <tr>
-            <td><a href="{% url 'show-angio' sudo.p_id %}"> {{ sudo.p_id }}</a></td>
-            <td>{{sudo.name}}    </td>
-            <td>{{sudo.vistit_number}}</td>
-            <td>{{sudo.procedure.procedure_type}}</td>
-            <td>{{sudo.operator.name}}</td>
-            <td>{{sudo.Date}}</td>
-            <td>{{sudo.procedure.Cost}}</td>
-            
-            
-
-        </tr>
+    
+    <table class="pre-req", style="width:80%">
+        
+        
+            <thead>
+                <tr>
+                <th> Cath ID</th>
+                <th>Patient Name</th>
+                <th>Visit Number</th>
+                <th>Procedure</th>
+                <th>Operator Name</th>
+                <th>Procedure Date</th>
+                <th>Total Cost</th>
+                </tr>
+            </thead>
+        
+        <tbody>
+            {%for sudo in venue_list%}
+            <tr>
+                <td><a href="{% url 'show-angio' sudo.p_id %}"> {{ sudo.p_id }}</a></td>
+                <td>{{sudo.name}}    </td>
+                <td>{{sudo.visit_number}}</td>
+                <td>{{sudo.procedure.procedure_type}}</td>
+                <td>{{sudo.operator.name}}</td>
+                <td>{{sudo.Date}}</td>
+                <td>{{sudo.procedure.Cost}}</td>
+          
+            </tr>
+            {% endfor%} 
+        </tbody>
     </table>
         
     
@@ -30,7 +46,7 @@
 
 <br/>
 
-    {% endfor%}
+    
     </center>
 
   

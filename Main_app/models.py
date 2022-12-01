@@ -10,7 +10,6 @@ class Procedure(models.Model):
 
     def __str__(self):
         return self.procedure_type
-
         
 class Operator(models.Model):
     name=models.CharField(max_length=30)
@@ -24,7 +23,6 @@ class PCI(models.Model):
     result_pci=models.CharField(max_length=100, default=" Successful PCI done to")
     recommendation=models.CharField(max_length=200, default="Dual Antiplatelet therapy")
    
-
 class Angio(models.Model):
     TECHNICIAN_CHOICE=(
         ('Shabir Ahmed', 'Shabir Ahmed'),
@@ -50,6 +48,9 @@ class Angio(models.Model):
     rca=models.TextField(default="Proximal: Normal </br> Mid: Normal </br> Distal:Normal")
     result_angio=models.CharField(max_length=50)
     recommendation_angio=models.CharField(max_length=100)
+    def __str__ (self):
+        return self.result_angio
+
     
 
 class Patient(models.Model):
@@ -71,5 +72,6 @@ class Patient(models.Model):
     procedure=models.ForeignKey(Procedure, null=True, blank=True,on_delete=models.DO_NOTHING)
     angio=models.ForeignKey(Angio, blank=True, null=True, on_delete=models.CASCADE)
     pci=models.ForeignKey(PCI, blank=True, null=True, on_delete=models.CASCADE)
-    def __str__ (self):
-        return self.name 
+    #def __str__ (self):
+     #   return self.name, self.visit_number, self.Date
+        
