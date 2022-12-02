@@ -5,22 +5,22 @@ import datetime
 from tinymce.models import HTMLField
 
 class Procedure(models.Model):
-    procedure_type=models.CharField(max_length=20)
+    procedure_type=models.CharField(max_length=50)
     Cost=models.IntegerField()
 
     def __str__(self):
         return self.procedure_type
         
 class Operator(models.Model):
-    name=models.CharField(max_length=30)
-    designation=models.CharField(max_length=25)
+    name=models.CharField(max_length=50)
+    designation=models.CharField(max_length=50)
     def __str__(self):
         return self.name
    
 
 class PCI(models.Model):
     pci_desc=HTMLField(default="Right Radial access used to engage LAD with Guiding Catheter JL-4 6F. Injection given lesion identified in LAD. BMW wire 0.014x190 cm wire used to cross the lesion in LAD. Pre dilatation done with Compliant 2.0x10 mm Balloon at 10 atm. Firehawk 3.0x18mm (DES) stent deployed in Proximal LAD inflated at 14 atm. Successful PCI done to LAD. TIMI grade III flow obtained with no immediate complications.")
-    result_pci=models.CharField(max_length=100, default=" Successful PCI done to")
+    result_pci=models.CharField(max_length=200, default=" Successful PCI done to")
     recommendation=models.CharField(max_length=200, default="Dual Antiplatelet therapy")
    
 class Angio(models.Model):
@@ -46,8 +46,8 @@ class Angio(models.Model):
     ramus=models.TextField(null=True, blank=True, default="Not Present")
     lcx=models.TextField(default="Proximal: Normal </br> Distal:Normal")
     rca=models.TextField(default="Proximal: Normal </br> Mid: Normal </br> Distal:Normal")
-    result_angio=models.CharField(max_length=50)
-    recommendation_angio=models.CharField(max_length=100)
+    result_angio=models.CharField(max_length=200)
+    recommendation_angio=models.CharField(max_length=200)
     def __str__ (self):
         return self.result_angio
 
@@ -59,17 +59,17 @@ class Patient(models.Model):
         ('Female', 'Female'),        
     )
     p_id = models.AutoField(primary_key=True)
-    name=models. CharField(max_length=30)
+    name=models. CharField(max_length=100)
     age=models.IntegerField()
     sex=models.CharField(max_length=6, choices=GENDER_CHOICE)
-    address=models.CharField(max_length=20)
+    address=models.CharField(max_length=100)
     cnic=models.IntegerField()
     indication=models.CharField(max_length=100)
     visit_number=models.IntegerField()
     Date=models.DateField() 
     discharge_date=models.DateField()
     operator=models.ForeignKey(Operator, on_delete=models.CASCADE)
-    procedure=models.ForeignKey(Procedure, null=True, blank=True,on_delete=models.DO_NOTHING)
+    procedure=models.ForeignKey(Procedure, null=True, blank=True,on_delete=models.CASCADE)
     angio=models.ForeignKey(Angio, blank=True, null=True, on_delete=models.CASCADE)
     pci=models.ForeignKey(PCI, blank=True, null=True, on_delete=models.CASCADE)
     #def __str__ (self):

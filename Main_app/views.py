@@ -13,15 +13,13 @@ def list_venues(request):
     return render(request, 'angio.html',
         {'venue_list': venue_list})
 
-
-
 def add_patient(request):
     submitted=False
     if request.method=='POST':
         form=PatientForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/list?submitted=True')
+            return HttpResponseRedirect('/dlist/?submitted=True')
     else:
         form=PatientForm
         if 'submitted'in request.GET:
@@ -29,26 +27,8 @@ def add_patient(request):
     return render(request, 'forms.html',{'form':form, 'submitted':submitted})
 
 def search(request):
-        list=Patient.objects.all()
-        p_filter=PatientFilter(request.GET, queryset=list)
+        p_list=Patient.objects.all()
+        p_filter=PatientFilter(request.GET, queryset=p_list)
         return render(request, 'search.html', {'filter':p_filter})
 
     
-#def SearchDate (request):
-    #queryset =Patient.objects.all()
-    #form=SearchForm(request.POST or None)
-    #context={
-    #    "queryset":queryset,
-     #   "form":form,
-    #}
-    #if request.method =='POST':
-     #   category =form['name'].value()
-      #  queryset=Patient.objects.filter(
-       #     last_updated_range=[
-        #        form['Date'].value(),
-         #       form['discharge_date'].value()
-          #  ]
-        #)
-    #else:
-     #   "NO"
-    #return render(request, 'search.html')

@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
 <center>
-    Search Form
+<div class="print-container">
+    
+
+    Procedure List
+</div>
 
 <form action="" method="get">
     {{ filter.form.as_p }}
     <button type="submit"> Search</button>
 </form>
 
-
+<div class="print-container">
     <table class="pre-req" style="width:80%">
         <thead>
+            <th>S/No</th>
             <th>Patient Name</th>
             <th>Visit Number</th>
             <th>Procedure</th>
@@ -24,8 +27,11 @@
         
         <tbody>
             {% for patient in filter.qs %}
+            
         <tr>
             
+        
+            <td>{{ forloop.counter }}</td>
             <td>{{patient.name}}    </td>
             <td>{{patient.visit_number}}</td>
             <td>{{patient.procedure.procedure_type}}</td>
@@ -37,10 +43,12 @@
 
         </tr>
         {% endfor%}
+    
         </tbody>
 
     </table>
         
 </center>
     
+</div>
 {% endblock %}

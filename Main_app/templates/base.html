@@ -11,10 +11,25 @@
 
         </head>
     <body>
-        <a href="{% url 'list' %}"> list</a> |
+        <style class="hi">
+            @media print{
+            body *{
+                visibility: hidden;
+                
+            }
+            .print-container, .print-container * {
+                visibility: visible;
+
+            }
+        }
+        </style> 
+        <button onclick="window.print()">Print</button> 
+        <a href="{% url 'a_list' %}"> list</a>  
         <a href="{% url 'add_patient' %}">Patient Entry</a>
         <a href="{% url 'dlist' %}"> Search</a>
-       
+        
+
+    
 {% block content  %}
  
  {%endblock %}
