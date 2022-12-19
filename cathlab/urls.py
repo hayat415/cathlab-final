@@ -8,6 +8,7 @@ urlpatterns = [
     path('',list_venues, name='a_list'),
     path('show_angio/<sudo_id>', show_angio, name='show-angio'),
     path('add_venue/',add_patient, name='add_patient'),
-    path('dlist/', search, name='dlist')
+    path('dlist/', search, name='dlist'),
+    path('proc/',proc, name='proc')
       
 ]

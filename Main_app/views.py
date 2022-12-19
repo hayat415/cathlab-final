@@ -31,4 +31,20 @@ def search(request):
         p_filter=PatientFilter(request.GET, queryset=p_list)
         return render(request, 'search.html', {'filter':p_filter})
 
-    
+def proc (request):
+    submitted=False
+    if request.method=='POST':
+        patient_ent=AngioForm(request.POST)
+        angio_ent=PatientForm(request.POST)
+        if patient_ent.is_valid() and angio_ent.is_valid():
+            form=patient_ent.save()
+            angio=angio_ent.save(False)
+            form.angio=angio            
+            form.save()
+            return HttpResponseRedirect('/dlist/?submitted=True')
+    else:
+        patient_ent=PatientForm
+        angio_ent=AngioForm
+        if 'submitted'in request.GET:
+            submitted=True
+    return render(request, 'procEnt.html',{'patient_ent':patient_ent, 'angio_ent': angio_ent, 'submitted':submitted}) 

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% if submitted %}
+    Your Entery Succesfuly Entered
+{% else %}
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ angio_ent}}
+        {{ patient_entf}}
+
+        <input type="submit" value="submit" class="btn btn-success">
+
+    </form>
+{% endif %}
+</div>
+{% endblock %}

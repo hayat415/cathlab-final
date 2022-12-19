@@ -58,6 +58,7 @@ class Patient(models.Model):
         ('Male', 'Male'),
         ('Female', 'Female'),        
     )
+    
     p_id = models.AutoField(primary_key=True)
     name=models. CharField(max_length=100)
     age=models.IntegerField()
